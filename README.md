@@ -16,7 +16,7 @@ Install közben pipáld be, hogy **"Add Pyhton to PATH"**
 ![alt text](https://github.com/xngst/Koltsegvetes-PDF-to-CSV-Excel/blob/main/install/install.png)
 !!!  
   
-3) Futtasd a pdf_2_csv_install.bat filet!  
+3) Futtasd a **pdf_2_csv_install.bat** filet!  
 A bat installálja a szükséges modulokat:  
 * tabula  
 * pandas   
