@@ -1,7 +1,7 @@
 # Önkormányzati Költségvetés PDF ből CSV és Excel átalakító  
 Átalakítja az pdf formátumban lévő elemi költségvetés táblázatokat csv és excel formátummá.
 
-Ahhoz hogy fusson a program, először fel kell installálni a pythont a számítógépedre.  
+Ahhoz hogy fusson a program, először fel kell installálni pythont a számítógépedre.  
 Az egyik modul Java-ra is támaszkodik ezért annak is kell lennie a gépen.  
 Java valószínűleg van a gépeden, de ha mégsem, akkor innen tudsz letölteni:  
 *https://www.java.com/download/ie_manual.jsp*  
