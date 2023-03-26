@@ -8,6 +8,7 @@ __MKKP__
 """
 2023-03-25
 feher.aron@gmail.com
+https://github.com/xngst/Koltsegvetes-PDF-to-CSV-Excel
 
 installok:
 pip install tabula
