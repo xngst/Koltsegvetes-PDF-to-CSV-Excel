@@ -27,10 +27,8 @@ Java valószínűleg van a gépeden, de ha mégsem, akkor innen tudsz letölteni
 (Windows alatt a Microsoft store-ból is le lehet tölteni. Ekkor kihagyható a kettes pont.)  
 
 2) Installáld a python csomagot!  
-!!!  
-Install közben pipáld be, hogy **"Add Pyhton to PATH"**  
+Install közben pipáld be a **"Add Pyhton to PATH"** rublikát!  
 ![alt text](https://github.com/xngst/Koltsegvetes-PDF-to-CSV-Excel/blob/main/install/install.png)
-!!!  
   
 3) Futtasd a **pdf_2_csv_install.bat** filet!  
 A bat installálja a szükséges modulokat:  
