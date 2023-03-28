@@ -44,7 +44,8 @@ Java valószínűleg van a gépeden, de ha mégsem, akkor innen tudsz letölteni
 Install közben pipáld be a **"Add Pyhton to PATH"** rublikát!  
 ![alt text](https://github.com/xngst/Koltsegvetes-PDF-to-CSV-Excel/blob/main/install/install.png)
   
-3) Futtasd a **pdf_2_csv_install.bat** filet!  
+3) Az [install](https://github.com/xngst/Koltsegvetes-PDF-to-CSV-Excel/tree/main/install) mapppában találsz egy bat filet.  
+Futtasd a **pdf_2_csv_install.bat** filet!  
 A bat installálja a szükséges modulokat:  
 * tabula-py  
 https://pypi.org/project/tabula-py/
