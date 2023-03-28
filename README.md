@@ -58,5 +58,13 @@ https://pypi.org/project/openpyxl/
 
 ## Használat  
 Dupla klikkel elindítod a programot.  
-
-
+1. Betallózod a gépeden található költségvetés pdf filet.
+2. Beírod hogy melyik költségvetési évre vonatkozik az adat.  
+3. Rákattintasz a Futtatás gombra.
+   Ekkor a következő szöveget mutatja a felület:  
+   ![alt text](https://github.com/xngst/Koltsegvetes-PDF-to-CSV-Excel/blob/main/példák/futás.png)  
+   A futás kb 1-2 percig tart maximum.
+   Ha kész, akkor kiírja hogy *Kész is vagyunk.*  
+   ![alt text](https://github.com/xngst/Koltsegvetes-PDF-to-CSV-Excel/blob/main/példák/prog_end.png)    
+   
+![alt text](https://github.com/xngst/Koltsegvetes-PDF-to-CSV-Excel/blob/main/példák/prog_demo.png)
