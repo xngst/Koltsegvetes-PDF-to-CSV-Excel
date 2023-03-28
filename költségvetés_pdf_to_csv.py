@@ -6,10 +6,6 @@ __MKKP__
 |  \/  |
 """
 """
-2023-03-25
-feher.aron@gmail.com
-https://github.com/xngst/Koltsegvetes-PDF-to-CSV-Excel
-
 installok:
 pip install tabula
 pip install pandas
@@ -22,10 +18,11 @@ pip install openpyxl
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-print("Az ügyintéző mindjárt megjelenik...") 
-import warnings
+print("Tessék egy sorszámot húzni...")
+import re
 import tabula
 import threading
+import warnings
 import pandas as pd
 
 from pathlib import Path
@@ -41,6 +38,7 @@ warnings.simplefilter("ignore")
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+print("Az ügyintéző mindjárt megjelenik...") 
 root = Tk()
 root.geometry('350x350')
 root.title('MKKP Informatika')
@@ -62,7 +60,7 @@ notebook.add(mkkp_frame, text='MKKP Elemi költségvetés átalakító szerkezet
 
 def select_file():
     ""
-    file_path = Path(filedialog.askopenfilename(title="Tallózni tessék!"))
+    file_path = Path(filedialog.askopenfilename(title="Tallózgatunk tallózgatunk?"))
     file_path_var.set(file_path)
     return
     
@@ -83,10 +81,19 @@ def get_col_name(columns):
         col_name = col
 
     return col_name
+    
+def get_kb_num(text:str):
+    try:
+        match_p = re.findall("\([KB].+\)",text)
+        kb_num = match_p[0].replace("(","").replace(")","")
+    except IndexError as err:
+        #print(text)
+        kb_num = "?"
+    return kb_num
  
 def run_main():
     ""
-    statusbar.config(text = "A Savköpő menyétek felkészítése..")
+    statusbar.config(text = "Savköpő Menyétek Felkészítése..")
     
     pdf_path = Path(file_path_var.get())
     year_in = year_input.get(1.0, "end-1c")
@@ -114,7 +121,6 @@ def run_main():
             pass
         
         try:
-        
             cleaned = df.iloc[2:,col_list]
             cleaned.columns = ["#","Megnevezés","Összeg"]
             cleaned.dropna(subset="Megnevezés", inplace=True)
@@ -127,7 +133,7 @@ def run_main():
                 print(err.args)
                 pass
             
-            #cleaned["K/B"] = cleaned["Megnevezés"].apply(lambda x: get_kb_num(x))
+            cleaned["K/B"] = cleaned["Megnevezés"].apply(lambda x: get_kb_num(x))
             cleaned["Típus"] = [col_name] * len(cleaned)
             cleaned["Év"] = [year] * len(cleaned)
             
@@ -139,10 +145,10 @@ def run_main():
     collector = pd.DataFrame()
     
     for key, value in my_dfs.items():
-        if value.shape[1] == 5:
+        if value.shape[1] == 6:
             collector = pd.concat([collector,value])
 
-    statusbar.config(text = "Iktatás..")
+    statusbar.config(text = "-Iktatás-")
     
     orig_file_name = pdf_path.parts[-1]
     xl_file_name = orig_file_name.split(".")[0]+f"_{year}.xlsx"
@@ -153,7 +159,7 @@ def run_main():
     collector.to_csv(pdf_path.parent/csv_file_name, 
     index=False, encoding="utf-16")
     
-    statusbar.config(text = "---Meg is vagyunk!---")
+    statusbar.config(text = "--- Meg is vagyunk! ---")
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -200,7 +206,7 @@ statusbar = Label(mkkp_frame, text="")
 statusbar.grid(sticky="EW", row=5, column=0, pady=5, padx=5) 
 
 separator2 = ttk.Separator(mkkp_frame).grid(row=6, column=0, columnspan=4, ipadx=100)                    
-                        
+
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 threading.Thread(target=root.mainloop()).start()
