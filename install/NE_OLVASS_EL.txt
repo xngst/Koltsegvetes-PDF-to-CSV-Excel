@@ -16,7 +16,7 @@ láasd: install.png
 
 3) Futtasd a pdf_2_csv_install.bat filet
 Ez installálja a szükséges modulokat:
-* tabula
+* tabula-py
 * pandas 
 * openpyxl
 
