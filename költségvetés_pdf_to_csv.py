@@ -7,7 +7,7 @@ __MKKP__
 """
 """
 installok:
-pip install tabula
+pip install tabula-py
 pip install pandas
 pip install openpyxl
 """
