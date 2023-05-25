@@ -1,7 +1,7 @@
 # Önkormányzati Költségvetés PDF ből CSV és Excel átalakító  
 
 ## Leírás  
-Átalakítja az pdf formátumban lévő önkormányzati elemi költségvetés táblázatokat csv és excel formátummá.  
+Átalakítja a pdf formátumban lévő önkormányzati elemi költségvetés táblázatokat csv és excel formátummá.  
 A következő táblákra ad releváns eredményt:    
   * K1-K8. Költségvetési kiadások  
   * B1-B7. Költségvetési bevételek  
